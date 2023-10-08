@@ -1,123 +1,123 @@
 <style>
     .wrapper-form {
-	background: #fff;
-	padding: 45px 20px;
-	max-width: 500px;
-	display: flex;
-	justify-content: center;
-	border-radius: 10px;
-}
+        background: #fff;
+        padding: 45px 20px;
+        max-width: 500px;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+    }
 
 
-.form-border {
-  width: 85%;
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-.form-group label {
-  padding: 5px 0px;
-  font-weight: 600;
-}
+    .form-border {
+    width: 85%;
+    }
+    .form-group {
+    display: flex;
+    flex-direction: column;
+    }
+    .form-group label {
+    padding: 5px 0px;
+    font-weight: 600;
+    }
 
-.checkbox input {
-  margin: 6px 0px;
-}
-.checkbox span {
-  color: red;
-}
+    .checkbox input {
+    margin: 6px 0px;
+    }
+    .checkbox span {
+    color: red;
+    }
 
-#table{
-    border-collapse: collapse;
-  width: 100%;
-  margin:20px 0px;
-}
-#table td, #table th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+    #table{
+        border-collapse: collapse;
+    width: 100%;
+    margin:20px 0px;
+    }
+    #table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+    #table tr:nth-child(even){background-color: #f2f2f2;}
 
-#table tr:hover {background-color: #ddd;}
+    #table tr:hover {background-color: #ddd;}
 
-#table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #0D1E62;
-  color: white;
-}
+    #table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0D1E62;
+    color: white;
+    }
 
-.table-img {
-	width: 100px;
-	height: 100px;
-}
+    .table-img {
+        width: 100px;
+        height: 100px;
+    }
 
-.wrapper-shortcode{
-    display:flex;
-    flex-direction:column;
-    width:20%;
-}
-.wrapper-shortcode button {
-	background: #080440;
-	color: #fff;
-	padding: 14px 28px;
-	border-radius: 6px;
-	border: 1px solid #0D1E62;
-	margin-top: 14px;
-}
+    .wrapper-shortcode{
+        display:flex;
+        flex-direction:column;
+        width:20%;
+    }
+    .wrapper-shortcode button {
+        background: #080440;
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        border: 1px solid #0D1E62;
+        margin-top: 14px;
+    }
 
-.wrapper-shortcode button:hover {
-    cursor:pointer;
-	background: transparent;
-	color: #080440;
-	border: 1px solid #0D1E62;
-}
+    .wrapper-shortcode button:hover {
+        cursor:pointer;
+        background: transparent;
+        color: #080440;
+        border: 1px solid #0D1E62;
+    }
 
-.wrapper-shortcode input {
-	padding: 8px;
-	text-align: center;
-	color: #262626;
-	font-weight: 600;
-	border: 1px solid #b0b0b0;
-}
+    .wrapper-shortcode input {
+        padding: 8px;
+        text-align: center;
+        color: #262626;
+        font-weight: 600;
+        border: 1px solid #b0b0b0;
+    }
 
-.form-button {
-	background: #080440;
-	color: #fff;
-	padding: 14px 28px;
-	border-radius: 6px;
-	border: 1px solid #0D1E62;
-	margin-top: 14px;
-}
+    .form-button {
+        background: #080440;
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        border: 1px solid #0D1E62;
+        margin-top: 14px;
+    }
 
-.form-button:hover {
-    cursor:pointer;
-	background: transparent;
-	color: #080440;
-	border: 1px solid #0D1E62;
-}
+    .form-button:hover {
+        cursor:pointer;
+        background: transparent;
+        color: #080440;
+        border: 1px solid #0D1E62;
+    }
 
-.back-btn {
-	background: #750f0f;
-	color: #fff;
-	padding: 14px 28px;
-	border-radius: 6px;
-	border: 1px solid #750f0f;
-	margin-top: 14px;
-	text-decoration: none;
-    margin-right:10px;
-}
+    .back-btn {
+        background: #750f0f;
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        border: 1px solid #750f0f;
+        margin-top: 14px;
+        text-decoration: none;
+        margin-right:10px;
+    }
 
 
-.back-btn:hover {
-    cursor:pointer;
-	background: transparent;
-	color: #750f0f;
-	border: 1px solid #750f0f;
-}
+    .back-btn:hover {
+        cursor:pointer;
+        background: transparent;
+        color: #750f0f;
+        border: 1px solid #750f0f;
+    }
 </style>
 
 <h2>
@@ -136,6 +136,8 @@
             $desc_slider = $edit_data->desc_slider;
             $images = $edit_data->images;
             $status = $edit_data->status;
+            $status_btn = $edit_data->status_btn;
+            $button_link = $edit_data->button_link;
         }
 
     ?>
@@ -174,6 +176,20 @@
                 <img src="<?php echo $upload_dir['baseurl'] .'/SliderDirectory/'. $images; ?>">
             <?php endif; ?>
         </div>
+        <div class="form-group">
+            <label>Button Slider</label>
+            <?php if($act == 'edit') : ?>
+            <input type="checkbox" name="status_btn" placeholder="Insert Heading" value="1" <?php echo ($status_btn == 1 ? 'checked' : '');?> >
+            <?php else : ?>
+            <input type="checkbox" name="status_btn" placeholder="Insert Heading" value="1" >
+            <?php endif;?>
+            <span>Centang untuk menambah button di slider</span>
+        </div>
+        <div class="form-group">
+            <label> Link Button Slider </label>
+            <input type="text" name="button_link" placeholder="Insert Heading" value="<?= isset($button_link) ? $button_link : ''?>" ?>
+        </div>
+
         <?php if( $act == 'edit') : ?>
             <a href="<?= admin_url() .'admin.php?page=slider' ?>" class="back-btn"> Back </a>
             <button type="submit" class="form-button">Edit Data</button>

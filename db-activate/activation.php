@@ -13,6 +13,8 @@ function sliderCreateTable() {
   `desc_slider` text DEFAULT NULL,
   `images` varchar(255) DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
+  `status_btn` int(1) DEFAULT NULL,
+  `button_link` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY(id)
   ) $charset_collate;

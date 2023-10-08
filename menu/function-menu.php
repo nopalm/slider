@@ -26,7 +26,9 @@ function slider_setting_page() {
 
     $head = isset($_POST['head_slider']) ? $_POST['head_slider'] : '';
     $desc = isset($_POST['desc_slider']) ? $_POST['desc_slider'] : '';
+    $button_link = isset($_POST['button_link']) ? $_POST['button_link'] : '';
     $checkbox = isset($_POST['checkbox']) ? 1 : 0;
+    $status_btn = isset($_POST['status_btn']) ? 1 : 0;
     $images = isset($_FILES['images']['name']) ? $_FILES['images']['name'] : '';
     $images_tmp = isset($_FILES['images']['tmp_name']) ? $_FILES['images']['tmp_name'] : '';
 
@@ -37,7 +39,7 @@ function slider_setting_page() {
     
     $target_dir_location = $content_directory . 'SliderDirectory/';
      
-    if(isset($_FILES['images']) && $act != 'edit') {
+    if(isset($_FILES['images']) && $act != 'edit' || $act == 'edit' ) {
      
         $name_file = isset($_FILES['images']['name']) ? $_FILES['images']['name'] : '';
         $tmp_name = isset($_FILES['images']['tmp_name']) ? $_FILES['images']['tmp_name'] : '';
@@ -52,6 +54,8 @@ function slider_setting_page() {
             'desc_slider' => $desc,
             'images' => $name_file,
             'status' => $checkbox,
+            'status_btn' => $status_btn,
+            'button_link' => $button_link,
             'created_at' => $dt
         ];
     } else {
@@ -59,6 +63,8 @@ function slider_setting_page() {
             'head_slider' => $head,
             'desc_slider' => $desc,
             'status' => $checkbox,
+            'status_btn' => $status_btn,
+            'button_link' => $button_link,
             'images' => NULL,
             'created_at' => $dt
         ];
@@ -107,7 +113,9 @@ function functionUpdated() {
 
     $head = isset($_POST['head_slider']) ? $_POST['head_slider'] : '';
     $desc = isset($_POST['desc_slider']) ? $_POST['desc_slider'] : '';
+    $button_link = isset($_POST['button_link']) ? $_POST['button_link'] : '';
     $checkbox = isset($_POST['checkbox']) ? 1 : 0;
+    $status_btn = isset($_POST['status_btn']) ? 1 : 0;
     $images = isset($_FILES['images']['name']) ? $_FILES['images']['name'] : '';
     $images_tmp = isset($_FILES['images']['tmp_name']) ? $_FILES['images']['tmp_name'] : '';
     $dt=date("Y-m-d H:i:s");
@@ -127,6 +135,8 @@ function functionUpdated() {
             'desc_slider' => $desc,
             'images' => $name_file,
             'status' => $checkbox,
+            'status_btn' => $status_btn,
+            'button_link' => $button_link,
             'created_at' => $dt
         ];
         $where = array('id' => $id);
@@ -147,6 +157,8 @@ function functionUpdated() {
             'head_slider' => $head,
             'desc_slider' => $desc,
             'status' => $checkbox,
+            'status_btn' => $status_btn,
+            'button_link' => $button_link,
             'images' => $images,
             'created_at' => $dt
         ];
